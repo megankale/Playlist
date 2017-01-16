@@ -1,9 +1,30 @@
-#Play{
-  background : url('./play.png') no-repeat;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display');
+
+html {
+  background: url(background.png) no-repeat center center fixed;
+  background-size: cover;
+  color: 	#FFF8DC;
 }
-#Pause{
-   background: url('./pause.png') no-repeat;
+body{
+
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+
 }
+h1{
+  font-family: 'Playfair Display', serif;
+  padding-top: 70px;
+}
+
+/*#clickable{
+  cursor:pointer;
+}*/
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
 button{
   height:128px;
   width: 128px;
@@ -22,4 +43,10 @@ input[type=button]{
   border: none;
   background-size: 50% 50%;
   background-position: center;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

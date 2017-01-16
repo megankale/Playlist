@@ -74,9 +74,10 @@ document.querySelector("#add").addEventListener("submit", function(e){
   myPlaylist.addSong(song);
 })
 
-document.getElementById('Play').addEventListener("click", function(e){
+document.getElementsByClassName('fa').addEventListener("click", function(e){
   e.preventDefault
-  myPlaylist.play();
+  console.log(hello);
+  // myPlaylist.play();
 })
 
 

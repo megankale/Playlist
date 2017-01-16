@@ -6,34 +6,36 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Finally!</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/ddb56eea73.js"></script>
 </head>
 <body>
+
+
   <h1>Juke It</h1>
-
-  <!-- <form action="">
-    <input type="text" placeholder="Enter a Song...">
-    <input type="submit" value="Search">
-  </form> -->
-
-  <h4>Current Track: <span id="track-title"></span></h4>
-  <audio id="playSong" src="" controls></audio>
 
   <form id="add" action="">
     <input type="text" id="song">
     <input type="submit" value="Add">
   </form>
 
-  <ul id="list">
+  <ul id="list" class="center">
 
   </ul>
 
-  <input type="button" id="Play"></input>
-  <input type="button" id="Pause"></input>
 
-  <!-- <br>
-      <button id="playButton" value="Play"></button>
-      <button id="pauseButton" value="Pause"></button>
-  </br> -->
+  <audio id="playSong" src="" controls></audio>
+  <h4>Current Track: <span id="track-title"></span></h4>
+
+  <div class="center>
+    <span class="clickable">
+    <span class="fa fa-backward fa-4x fa-fw" aria-hidden="true" id="Back"></span>
+    <span class="fa fa-pause fa-4x fa-fw" aria-hidden="true" id="Pause"></span>
+    <span class="fa fa-play fa-4x fa-fw" aria-hidden="true" id="Play"></span>
+    <span class="fa fa-forward fa-4x fa-fw" aria-hidden="true" id="Forward"></span>
+    </span>
+  </div>
+    <!-- <input type="button" id="Play"></input>
+    <input type="button" id="Pause"></input> -->
 
   <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
