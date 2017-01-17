@@ -1,26 +1,37 @@
 function playlist(){
   this.songs = [];
+  var i=0;
 
   this.addSong = function(song){
-    this.songs.push(song);
+    this.songs.push(song)
+    console.log(this.songs.length);
 
   }
-
   this.play = function(){
-    for (var i = 0; i < this.songs.length; i++){
-      console.log(this.songs[i]);
-      audio.src = this.songs[i];
-      audio.play();
-    }
+    audio.src = this.songs[i];
+    audio.play();
   }
+
   this.pause = function(){
     audio.pause();
+  }
+
+  this.next = function(){
+    ++i;
+    audio.src = this.songs[i];
+    audio.play()
+  }
+
+this.back = function(){
+    --i;
+    audio.src = this.songs[i];
+    audio.play()
   }
 }
 
 function Jukebox(){
   this.play = function(){
-		playlist.play();
+		playlist.play()
 	}
   }
 
@@ -28,6 +39,7 @@ var myPlaylist = new playlist()
 var myJukebox = new Jukebox();
 var query= document.querySelector("input").value;
 var audio = document.getElementById('playSong');
+
 
 document.querySelector("form").addEventListener("submit", function(e) {
     e.preventDefault();
@@ -51,7 +63,11 @@ function searchTracks(query) {
             audio.src = track.preview_url;
             $("#list").append("<li>" + query + "</li>");
             addTracks(audio.src);
-        }
+            current = response.tracks.items[0].name;
+            console.log(current);
+            document.getElementById("current").innerHTML = "Current Track: " + current;
+            }
+
     })
 }
 
@@ -62,7 +78,7 @@ function addTracks(song) {
 document.getElementById('Back').addEventListener("click", function(e){
   e.preventDefault();
   console.log("back button pressed");
-  myPlaylist.play();
+  myPlaylist.back();
 })
 document.getElementById('Pause').addEventListener("click", function(e){
   e.preventDefault();
@@ -77,6 +93,8 @@ document.getElementById('Play').addEventListener("click", function(e){
 document.getElementById('Forward').addEventListener("click", function(e){
   e.preventDefault();
   console.log("forward button pressed");
-  myPlaylist.play();
+  myPlaylist.next();
 })
+
+
 console.log(myPlaylist);
